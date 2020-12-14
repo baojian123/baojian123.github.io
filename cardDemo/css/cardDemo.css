@@ -7,14 +7,12 @@ div.original-style{
   height:420px;
 }
 div.my-style{
-  position:absolute;
-  left:50px;
+  margin-left:50px;
 }
 div.user-card{
   background-color:#ffffff;
   position: relative;
-  top:50px;
-  left:50px;
+  top:0;
   font-family:arial;
   height:380px;
   width:300px;
@@ -22,6 +20,10 @@ div.user-card{
   overflow: hidden;
   box-shadow: 5px 7px 5px #777777;
   cursor:pointer;
+  transition: top .3s ease-out;
+}
+div.user-card:hover{
+  top:-15px;
 }
 div.card-header{
   width:100%;
@@ -30,6 +32,7 @@ div.card-header{
   background-position:50%;
   background-color:#e7e7e7;
 }
+
 div.image-mask{
   width:100%;
   height:100%;
@@ -55,7 +58,6 @@ div.bt-favorite{
   top:120px;
   right:20px;
 }
-
 div.card-content{
   margin: 50px 0px 0px 20px;
 }
@@ -65,10 +67,40 @@ div.user-name{
 p.user-name-val{
   display:inline;
 }
-svg.icon-eshop{
+div.eshop{
   display:inline;
+  position: relative;
+}
+div.icon-eshop{
+  display:inline-block;
   width:15px;
   height:15px;
+}
+div.tips{
+  display:none;
+  font-size:10px;
+  color: #ffffff;
+  opacity: 0;
+  width:200px;
+  height:40px;
+  background-color:#5783fc;
+  position:absolute;
+  top:-45px;
+  left:-90px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-out;
+  padding-left: 10px;
+  cursor: text;
+}
+
+div.tips-triangle{
+  border:5px solid transparent;
+  border-top-color:#5783fc;
+  height: 0;
+  width:0;
+  position: absolute;
+  top:40px;
+  left:92.5px;
 }
 div.user-id, div.user-region, div.stats-item-key, div.analysis-item-prob{
   font-size:12px;
@@ -96,8 +128,19 @@ div.user-analysis-item{
 div.inline{
   display:inline;
 }
-
 img.icon-region{
   width:15px;
   height:15px;
+}
+div.card-footer{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+}
+a.detail{
+  text-decoration: none;
+  color:#5783fc;
+}
+a.detail:visited{
+  color:#5783fc;
 }

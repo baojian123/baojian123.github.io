@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="css/cardDemo.css">
+  <script src="js/cardDemo.js"></script>
 </head>
 <body>
   <h1>User Card Demo</h1>
@@ -18,8 +19,7 @@
   </div>
   <div class="my-style">
     <h2>My Style</h2>
-  </div>
-  <div class="user-card">
+    <div class="user-card">
     <div class="card-header">
       <div class="image-mask">
       </div>
@@ -35,9 +35,19 @@
       <div class="card-content">
         <div class="user-name">
           <p class="user-name-val">addison rae</p>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="icon-eshop">
-            <rect width="16" height="16" fill="#FFC83D" rx="1.333"></rect><path fill="#fff" fill-rule="evenodd" d="M4.047 5.306h1.272a3.261 3.261 0 01-.037-.473C5.282 3.27 6.502 2 8.008 2s2.726 1.269 2.726 2.833c0 .158-.013.316-.037.473h1.273c.059-.005.118-.005.177 0 .18.022.352.082.508.175.157.093.293.218.4.368a1.444 1.444 0 01.264 1.062l-.668 5.194c-.091.708-.676 1.235-1.363 1.228H4.701c-.687.007-1.272-.52-1.363-1.228L2.67 6.911a1.394 1.394 0 010-.189 1.461 1.461 0 01.404-1.007 1.321 1.321 0 01.973-.41zm1.667 3.343a.759.759 0 01-.762-.756c0-.417.342-.755.762-.755.421 0 .762.338.762.755a.759.759 0 01-.762.756zm3.81-.756c0 .418.341.756.762.756.42 0 .762-.338.762-.756a.759.759 0 00-.762-.755.759.759 0 00-.762.755zM8.008 2.944c-1.004 0-1.817.846-1.817 1.89-.001.159.019.318.06.472h3.515c.04-.154.06-.313.06-.473 0-1.043-.814-1.889-1.818-1.889z" clip-rule="evenodd"></path>
-          </svg>
+          <div class="eshop" onmouseover="unfold(this)" onmouseout="collapse(this)">
+            <div class="icon-eshop">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                <rect width="16" height="16" fill="#FFC83D" rx="1.333"></rect><path fill="#fff" fill-rule="evenodd" d="M4.047 5.306h1.272a3.261 3.261 0 01-.037-.473C5.282 3.27 6.502 2 8.008 2s2.726 1.269 2.726 2.833c0 .158-.013.316-.037.473h1.273c.059-.005.118-.005.177 0 .18.022.352.082.508.175.157.093.293.218.4.368a1.444 1.444 0 01.264 1.062l-.668 5.194c-.091.708-.676 1.235-1.363 1.228H4.701c-.687.007-1.272-.52-1.363-1.228L2.67 6.911a1.394 1.394 0 010-.189 1.461 1.461 0 01.404-1.007 1.321 1.321 0 01.973-.41zm1.667 3.343a.759.759 0 01-.762-.756c0-.417.342-.755.762-.755.421 0 .762.338.762.755a.759.759 0 01-.762.756zm3.81-.756c0 .418.341.756.762.756.42 0 .762-.338.762-.756a.759.759 0 00-.762-.755.759.759 0 00-.762.755zM8.008 2.944c-1.004 0-1.817.846-1.817 1.89-.001.159.019.318.06.472h3.515c.04-.154.06-.313.06-.473 0-1.043-.814-1.889-1.818-1.889z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="tips">
+              <div class="tips-content">
+                <p>This creator has enabled the e-Commerse Anchor feature.</p>
+              </div>
+              <div class="tips-triangle"></div>
+            </div>
+          </div>
         </div>
         <div class="user-id">
           <p>@addisonre</p>
@@ -79,7 +89,10 @@
         </div>
       </div>
     </div>
-    <div class="card-footer"></div>
+    <div class="card-footer">
+      <a class="detail"href="#">Detail ></a>
+    </div>
+  </div>
   </div>
 </body>
 </html>
