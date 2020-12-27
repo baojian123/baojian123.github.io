@@ -1,0 +1,12 @@
+.bt{
+  width:140px;
+  height: 40px;
+  cursor:pointer;
+  background:linear-gradient(135deg,transparent 50%, lightblue 0, blue 90%, transparent 0) no-repeat;
+  background-size:100% 100%;
+  background-position:-25% 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:5px;
+}

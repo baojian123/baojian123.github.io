@@ -1,0 +1,80 @@
+$cardWidth:300px;
+$cardHeight: 400px;
+$headerHeight:100px;
+$footerHeight:50px;
+$avatarRadius:60px;
+$descent:30px;
+.card{
+  width:$cardWidth;
+  height: $cardHeight;
+  background-color:#white;
+  border-radius: 5px;
+  overflow: hidden;
+  position:relative;
+  box-shadow: 5px 5px 5px #aaaaaa;
+  transition: position .3s ease-out;
+  &__header{
+    width:100%;
+    height:$headerHeight;
+    position: relative;
+    background-image: url("../img/avatar.jpeg");
+    background-size:cover;
+    background-position: 50%;
+    background-color:grey;
+  }
+  &__info{
+    width:100%;
+    height: $cardHeight - $headerHeight - $footerHeight;
+    padding-left: $descent;
+    padding-top: $avatarRadius*0.5+10px;
+    position:relative;
+    box-sizing:border-box;
+    font-size: 20px;
+  }
+  &__footer{
+    width:100%;
+    height:$footerHeight;
+  }
+}
+
+.info{
+  &__nickname{
+    margin-bottom: 18px;
+  }
+  &__uniqueId, &__region{
+    font-size: 14px;
+    color:grey;
+    margin-bottom:10px;
+  }
+  &__topic{
+    display:flex;
+  }
+}
+
+.topic__item{
+  font-size:14px;
+  color:purple;
+  background-color:pink;
+  padding:2px 5px;
+  margin-right:10px;
+
+}
+
+.header{
+  &__mask{
+    width:100%;
+    position: absolute;
+    background-color:rgba(0,0,0,.2);
+  }
+  &__avatar{
+    width: $avatarRadius;
+    height: $avatarRadius;
+    background-image: url('../img/avatar.jpeg');
+    background-size:cover;
+    border:3px solid #ffffff;
+    border-radius:50%;
+    position: absolute;
+    bottom:$avatarRadius*-0.5;
+    left:$descent;
+  }
+}

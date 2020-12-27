@@ -1,0 +1,95 @@
+$S: 576px;
+$M: 760px;
+$L: 992px;
+$XL:1200px;
+
+.card{
+  width: 400px;
+  height:300px;
+  position: relative;
+  background:pink;
+  &-city{
+    position: absolute;
+    top:10px;
+    right:10px;
+    padding:5px;
+    background:blue;
+    color:#ffffff;
+    border-radius: 3px;
+    transition:all 0.3s ease-out;
+    &:hover{
+      background-color: green;
+    }
+  }
+}
+
+@mixin MQ($canvas){
+  @if $canvas==S{
+    @media only screen and (min-width:$S){
+      @content;
+    }
+  }
+  @else if $canvas==M{
+    @media only screen and (min-width:$M){
+      @content;
+    }
+  }
+  @else if $canvas==L{
+    @media only screen and (min-width:$L){
+      @content;
+    }
+  }
+  @else if $canvas==XL{
+    @media only screen and (min-width:$XL){
+
+    }
+  }
+}
+
+.card{
+  @include MQ(S){
+    font-size:1em;
+  }
+  @include MQ(M){
+    font-size:1.2em;
+  }
+  @include MQ(L){
+    font-size:1.5em;
+  }
+  @include MQ(XL){
+    font-size:2em;
+  }
+}
+
+
+$side-width: 140px;
+.side{
+  flex-grow: 0;
+  min-width:$side-width;
+}
+
+.header{
+  height:80px;
+  background-color: grey;
+}
+.main{
+  display:flex;
+  min-height: 600px;
+}
+
+.menu{
+  @extend .side;
+  background-color:lightblue;
+}
+.content{
+  flex-grow: 1;
+  background-color:#eeeeee;
+}
+.advertisement{
+  @extend .side;
+  background-color:pink;
+}
+.footer{
+  height:80px;
+  background-color: grey;
+}
