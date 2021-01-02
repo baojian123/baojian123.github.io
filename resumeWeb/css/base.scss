@@ -1,3 +1,86 @@
+$logoWidth:100px;
+$logoHeight:40px;
+$navHeight: 100px;
+$cardHeight:600px;
+$cardWidth:500px;
+
+body{
+  background-color: #e7e7e7;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+.navigation{
+  display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 3px 5px #bbbbbb;
+  background-color: rgba(255,255,255,.6);
+  font-size: 18px;
+  .top{
+    background-color: rgba(255,255,255,1);
+  }
+  &__logo{
+    width:$logoHeight;
+    height:$logoHeight;
+    background:url("../asset/logo.ico") no-repeat;
+    background-size: cover;
+  }
+  &__list{
+    min-width:400px;
+    max-width:600px;
+    height:100%;
+    display:flex;
+    justify-content: space-around;
+    flex-grow:1;
+  }
+  &__item{
+    list-style-type: none;
+    a,a:visited{
+      text-decoration: none;
+      color:black;
+      &:hover::after,.active::after{
+        transition: all .5s ease-out;
+        background-color:#ff0258;
+        width:40px;
+      }
+      &::after{
+        content:"";
+        position:relative;
+        left:50%;
+        bottom:-6px;
+        margin-left: -20px;
+        border-radius: 4px;
+        width:0px;
+        height:3px;
+        background-color: transparent;
+        display: block;
+      }
+    }
+  }
+}
+.underline{
+}
+.content{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:$navHeight;
+  width:100%;
+}
+
+.page{
+  min-width:800px;
+  height:500px;
+  background:pink;
+  display:none;
+}
+.current{
+  display:block;
+}
 .bt{
   width:140px;
   height: 40px;
