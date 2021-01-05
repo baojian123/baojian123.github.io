@@ -30,7 +30,12 @@ function routeSwitch(){
   if(location.hash){
      targetPage = document.querySelector(location.hash);
   }else{
-    document.querySelector(".page").classList.add("current");
+    let defaultPage = document.querySelectorAll(".page")[0];
+    defaultPage.classList.add("current");
+    let defaultActive = document.querySelectorAll(".navigation__item")[0];
+    setTimeout(function(){
+      defaultActive.querySelector("a").classList.add("active");
+    },0)
   }
   // if target has been already current page, we don't need to reload.
   // we only reload different page
@@ -38,16 +43,18 @@ function routeSwitch(){
     //firstly, we remove the previous current page
     if(currentPage){
       currentPage.classList.remove("current");
+      let activeItem = document.querySelector(".active");
+      activeItem.classList.remove("active");
     }
     //and check whether the hash value is null
     if(targetPage){
       targetPage.classList.add("current");
+      document.querySelector("[href='"+location.hash+"']").classList.add("active");
     }else{
       //exception hash value, should be 404 not Found Page
       // document.querySelector(".page").classList.add("current");
     }
   }
-  console.log(targetPage)
 }
 
 function initRoute(){
@@ -68,7 +75,23 @@ function initRoute(){
   //   pageList[0].className= "page current"
   // },0)
   routeSwitch()
+  main()
 }
+
+var flag = 0
+var console = document.querySelector(".console")
+var collapse = document.querySelector(".collapse")
+function footer(){
+  if(flag){
+    console.style.height="0px";
+    collapse.classList.remove("show");
+  }else{
+    console.style.height="100px";
+    collapse.classList.add("show");
+  }
+  flag^=1
+}
+
 
 window.onload = initRoute
 window.onhashchange = routeSwitch
