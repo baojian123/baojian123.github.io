@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zhian's Resume</title>
   <link rel="stylesheet" href="css/base.css">
+  <link rel="shortcut icon" href="asset/logo.png">
 </head>
 <body>
   <div id="background"></div>
-  <nav class="header">
-    <div class="navigation">
-      <div class="navigation__logo">
-
-      </div>
-      <ul class="navigation__list">
-      </ul>
+  <nav class="header navigation top">
+    <div class="navigation__logo">
     </div>
+    <ul class="navigation__list">
+    </ul>
   </nav>
   <div class="content">
     <div id="page-loader">
@@ -25,14 +23,19 @@
     <div class="console">
       <label for="">bgColor:</label><input type="color" id="bg-color" name="color"
       value="#e7e7e7" >
-      <label for="">Name:</label><input type="text" id="name" name="name"
+      <label for="">Name:</label><input type="text" id="user-name" name="name"
       value="Zhian Chen" >
     </div>
-    <div class="collapse" onclick="footer()"></div>
+    <div class="collapse" onclick="footerShow()"></div>
   </div>
-  <script src="js/index.js" charset="utf-8"></script>
-  <script src="js/customized.js" charset="utf-8"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel" src="js/home.js"></script>
+
+  <script src="js/babel.js"></script>
+  <script type="text/babel" src="js/customized.js" charset="utf-8"></script>
+  <script type="text/babel" src="js/complier.js" charset="utf-8"></script>
+  <script type="text/babel" src="page/HomePage.js" charset="utf-8"></script>
+  <script type="text/babel" src="page/ResumePage.js" charset="utf-8"></script>
+  <script type="text/babel" src="page/ContactPage.js" charset="utf-8"></script>
+  <script type="text/babel" src="page/AboutPage.js" charset="utf-8"></script>
+  <script type="text/babel" src="js/index.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,19 +1,26 @@
 /** @jsx createElement */
-/*** @jsxFrag createFragment */
 
 const createElement = (tag, props, ...children) => {
   if (typeof tag === "function") return tag(props, ...children);
   const element = document.createElement(tag);
   Object.entries(props || {}).forEach(([name, value]) => {
-    if (name.startsWith("on") && name.toLowerCase() in window)
-      element.addEventListener(name.toLowerCase().substr(2), value);
-    else element.setAttribute(name, value.toString());
+    // if(name!=name.toLowerCase()){
+    //   console.log(name)
+    // }
+    if (name.startsWith("on") && name in window){
+      element.addEventListener(name.substr(2), value);
+    }
+    else if(name=="viewBox") {
+      //setAttribute will convert attribute to lower case automatically
+      element.setAttributeNS("http://www.w3.org/2000/svg", name, value.toString());
+    }else{
+      element.setAttribute(name, value.toString());
+    }
   });
 
   children.forEach((child) => {
     appendChild(element, child);
   });
-
   return element;
 };
 

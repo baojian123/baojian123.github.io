@@ -15,7 +15,7 @@ const navigationList = [{
 function NavItem(navObj){
   let navigationItem = document.createElement("li");
   navigationItem.classList.add("navigation__item");
-  link = document.createElement("a");
+  let link = document.createElement("a");
   link.href = "#"+navObj["id"];
   link.textContent = navObj["title"]
   navigationItem.append(link)
@@ -60,13 +60,12 @@ function routeSwitch(){
 function initRoute(){
   let pageLoader = document.querySelector("#page-loader");
   let navigation = document.querySelector(".navigation__list");
+  let sections = document.querySelectorAll("section");
   navigationList.forEach((item,key)=>{
-    let sect = document.createElement("section");
-    sect.id = item.id;
-    sect.classList.add("page");
-    sect.textContent=item.title;
-    pageLoader.append(sect)
-    navigationItem = NavItem(item);
+    // let sect = sections[key]
+    // sect.id = item.id;
+    // sect.classList.add("page");
+    let navigationItem = NavItem(item);
     navigation.append(navigationItem);
   })
   //due to the for loop, we need to push the action setting homepage into setTimeout
@@ -74,24 +73,37 @@ function initRoute(){
   //   let pageList = document.querySelectorAll(".page");
   //   pageList[0].className= "page current"
   // },0)
+  document.body.onscroll = function(){
+    let scroll;
+    let navigation = document.querySelector(".navigation")
+    if(window.pageYOffset){
+      scroll = window.pageYOffset
+    }else if(document.body.scrollTop){
+      scroll = document.body.scrollTop
+    }
+    if(!scroll){
+      navigation.classList.add("top")
+    }else{
+      navigation.classList.remove("top")
+    }
+  }
   routeSwitch()
-  main()
+  bindMVVM()
 }
 
 var flag = 0
-var console = document.querySelector(".console")
+var footer = document.querySelector(".console")
 var collapse = document.querySelector(".collapse")
-function footer(){
+function footerShow(){
   if(flag){
-    console.style.height="0px";
+    footer.style.height="0px";
     collapse.classList.remove("show");
   }else{
-    console.style.height="100px";
+    footer.style.height="100px";
     collapse.classList.add("show");
   }
   flag^=1
 }
 
-
-window.onload = initRoute
+initRoute()
 window.onhashchange = routeSwitch

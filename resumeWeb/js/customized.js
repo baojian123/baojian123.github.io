@@ -12,9 +12,10 @@ function contentBinding(id){
     document.querySelector(id).textContent = e.target.value
   }
 }
-function main(){
+
+function bindMVVM(){
   var bgColor = document.querySelector("#bg-color");
   bgColor.oninput = styleBinding.bind(bgColor)("#background","backgroundColor")
-  var name = document.querySelector("#name");
-  name.oninput = contentBinding.bind(name)("#home")
+  // var name = document.querySelector("#name");
+  // name.oninput = contentBinding.bind(name)("#home")
 }
