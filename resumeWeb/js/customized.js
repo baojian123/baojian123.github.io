@@ -32,7 +32,8 @@ function bindMVVM(){
   // var name = document.querySelector("#name");
   // name.oninput = contentBinding.bind(name)("#home")
   var themeColor = document.querySelector("#theme-color");
-  themeColor.value = document.querySelector(":root").style.getProperty("--themeColor");
+  themeColor.value = "#7861da";
+  // themeColor.value = "#add8e6";
   themeColor.oninput = propertyBinding.bind(themeColor)(":root","--themeColor");
 
 }
