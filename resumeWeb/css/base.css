@@ -19,6 +19,10 @@ body {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
+:root {
+  --themeColor: #7861da;
+}
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -137,7 +141,7 @@ body {
   color: #ffffff;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: var(--themeColor);
 }
 .page__content {
   display: flex;
@@ -156,7 +160,7 @@ body {
   width: 140px;
   height: 40px;
   cursor: pointer;
-  background: linear-gradient(135deg, transparent 50%, lightblue 0, blue 90%, transparent 0) no-repeat;
+  background: linear-gradient(135deg, transparent 50%, var(--themeColor) 0, blue 90%, transparent 0) no-repeat;
   background-size: 100% 100%;
   background-position: -25% 0;
   display: flex;
@@ -166,7 +170,7 @@ body {
 }
 
 #resume {
-  background: linear-gradient(180deg, lightblue 50%, white 50%);
+  background: linear-gradient(180deg, var(--themeColor) 50%, white 50%);
   position: relative;
 }
 #resume__info {
@@ -291,7 +295,8 @@ body {
 
 #contact__detail {
   width: 50%;
-  padding: 0;
+  padding: 0 20px;
+  margin-top: 1em;
 }
 #contact__detail > li {
   list-style: none;
@@ -303,7 +308,7 @@ body {
 }
 #contact__detail > li.detail-info > .detail__key {
   border-radius: 50%;
-  background-color: lightblue;
+  background-color: var(--themeColor);
   min-width: 36px;
   height: 36px;
   margin-right: 10px;
@@ -322,6 +327,8 @@ body {
 }
 #contact__form {
   width: 50%;
+  padding: 0 20px;
+  margin-top: 1em;
 }
 
 #map {
@@ -359,6 +366,77 @@ body {
   mask: url(../asset/call-24px.svg) no-repeat center/contain;
 }
 
+#form__content, #form__content--message, #form__content--email, #form__content--name {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+#form__content::before, #form__content--message::before, #form__content--email::before, #form__content--name::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: var(--themeColor);
+}
+#form__content > input, .footer #form__content > input:focus, #form__content--message > input, .footer #form__content--message > input:focus, #form__content--email > input, .footer #form__content--email > input:focus, #form__content--name > input, .footer #form__content--name > input:focus, #form__content > textarea, #form__content--message > textarea, #form__content--email > textarea, #form__content--name > textarea {
+  font-family: "Roboto", Helvetica, sans-serif;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  margin-left: 5px;
+  border: 1px solid transparent;
+  border-bottom-color: #777777;
+}
+#form__content > textarea, #form__content--message > textarea, #form__content--email > textarea, #form__content--name > textarea {
+  height: 80px;
+  resize: none;
+}
+#form__content--name::before {
+  -webkit-mask: url(../asset/person-24px.svg) no-repeat center/contain;
+  -moz-mask: url(../asset/person-24px.svg) no-repeat center/contain;
+  -ms-mask: url(../asset/person-24px.svg) no-repeat center/contain;
+  -o-mask: url(../asset/person-24px.svg) no-repeat center/contain;
+  mask: url(../asset/person-24px.svg) no-repeat center/contain;
+}
+#form__content--email::before {
+  -webkit-mask: url(../asset/email-24px.svg) no-repeat center/contain;
+  -moz-mask: url(../asset/email-24px.svg) no-repeat center/contain;
+  -ms-mask: url(../asset/email-24px.svg) no-repeat center/contain;
+  -o-mask: url(../asset/email-24px.svg) no-repeat center/contain;
+  mask: url(../asset/email-24px.svg) no-repeat center/contain;
+}
+#form__content--message::before {
+  -webkit-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
+  -moz-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
+  -ms-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
+  -o-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
+  mask: url(../asset/msg-24px.svg) no-repeat center/contain;
+}
+#form__captcha {
+  margin-top: 30px;
+}
+#form__submit {
+  margin-top: 30px;
+}
+#form__submit-bt {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  padding: 10px 40px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--themeColor);
+  border-radius: 5px;
+  border: 3px solid var(--themeColor);
+  cursor: pointer;
+}
+#form__submit-bt:hover {
+  color: #ffffff;
+  background-color: var(--themeColor);
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -376,7 +454,7 @@ body {
 }
 .footer input:focus {
   outline: none;
-  border-bottom-color: lightblue;
+  border-bottom-color: var(--themeColor);
 }
 
 .console {
@@ -445,7 +523,7 @@ body {
 }
 
 .color-lb {
-  color: lightblue;
+  color: var(--themeColor);
 }
 
 /*# sourceMappingURL=base.css.map */

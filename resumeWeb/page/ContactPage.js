@@ -1,6 +1,15 @@
 /** @jsx createElement */
 
+
+const verifyForm = () =>{
+  var recaptchaRes = grecaptcha.getResponse()
+  if(!recaptchaRes){
+    //google recaptcha verification failed, return a error
+  }
+}
+
 const ContactPage = (props) => {
+  var reCaptchaKey = "6LfYLSUaAAAAAIcE2k4FHftAsByqFjyfcTcGtj-O";
   return (
     <section id={props.pageId} class="page">
       <div class="page__header">
@@ -26,12 +35,21 @@ const ContactPage = (props) => {
           </li>
         </ul>
         <div id="contact__form">
+          <h3 id="detail__header">Send <span class="color-lb">me</span> an email</h3>
           <form action="#" method="post">
-            <div id="form__name"><input type="text"/></div>
-            <div id="form__email"><input type="text"/></div>
-            <div id="form__message"><input class="" type="text"/></div>
-            <div id="form__captcha"></div>
-            <div id="form__submit"><input class="form__submit-bt"type="submit"/></div>
+            <div id="form__content--name">
+              <input type="text" placeholder="Your Name"/>
+            </div>
+            <div id="form__content--email">
+              <input type="text" placeholder="Your Email"/>
+            </div>
+            <div id="form__content--message">
+              <textarea class="msg__content" type="text" placeholder="What do you want to tell me"/>
+            </div>
+            <div id="form__captcha">
+              <div class="g-recaptcha" data-sitekey={reCaptchaKey}></div>
+            </div>
+            <div id="form__submit"><input id="form__submit-bt" type="submit" value="Send"/></div>
           </form>
         </div>
       </div>

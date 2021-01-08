@@ -41,6 +41,10 @@ $footerColor: rgba(255,255,255,1);
 body{
   font-family: 'Roboto', Helvetica, sans-serif;
 }
+:root{
+  // --themeColor:lightblue;
+  --themeColor: #7861da;
+}
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -150,7 +154,7 @@ body{
     color:#ffffff;
     justify-content: center;
     align-items: center;
-    background-color:lightblue;
+    background-color:var(--themeColor);
   }
   &__content{
     display:flex;
@@ -169,7 +173,7 @@ body{
   width:140px;
   height: 40px;
   cursor:pointer;
-  background:linear-gradient(135deg,transparent 50%, lightblue 0, blue 90%, transparent 0) no-repeat;
+  background:linear-gradient(135deg,transparent 50%, var(--themeColor) 0, blue 90%, transparent 0) no-repeat;
   background-size:100% 100%;
   background-position:-25% 0;
   display:flex;
@@ -179,7 +183,7 @@ body{
 }
 
 #resume{
-  background: linear-gradient(180deg,lightblue 50%, white 50%);
+  background: linear-gradient(180deg,var(--themeColor) 50%, white 50%);
   position: relative;
   &__info{
     position: absolute;
@@ -282,12 +286,10 @@ body{
 }
 
 #contact{
-  &__header{
-
-  }
   &__detail{
     width:50%;
-    padding: 0;
+    padding: 0 20px;
+    margin-top: 1em;
     &>li{
       list-style:none;
       &.detail-info{
@@ -296,7 +298,7 @@ body{
         align-items: center;
         >.detail__key{
           border-radius: 50%;
-          background-color: lightblue;
+          background-color: var(--themeColor);
           min-width:36px;
           height:36px;
           margin-right:10px;
@@ -318,6 +320,8 @@ body{
   }
   &__form{
     width:50%;
+    padding: 0 20px;
+    margin-top: 1em;
   }
 }
 #map{
@@ -349,6 +353,73 @@ body{
     }
   }
 }
+
+#form{
+  &__content{
+    display:flex;
+    flex-direction: row;
+    margin-top: 30px;
+    &::before{
+      content:"";
+      width:30px;
+      height:30px;
+      background-color: var(--themeColor);
+    }
+    &>input, &>textarea{
+      font-family: "Roboto", Helvetica, sans-serif;
+      outline:none;
+      width:100%;
+      height:30px;
+      box-sizing: border-box;
+      margin-left:5px;
+      border:1px solid transparent;
+      border-bottom-color: #777777;
+    }
+    &>textarea{
+      height:80px;
+      resize:none;
+    }
+    &--name{
+      @extend #form__content;
+      &::before{
+        @include mask(url(../asset/person-24px.svg) no-repeat center/contain)
+      }
+    }
+    &--email{
+      @extend #form__content;
+      &::before{
+        @include mask(url(../asset/email-24px.svg) no-repeat center/contain)
+      }
+    }
+    &--message{
+      @extend #form__content;
+      &::before{
+        @include mask(url(../asset/msg-24px.svg) no-repeat center/contain)
+      }
+    }
+  }
+  &__captcha{
+    margin-top: 30px;
+  }
+  &__submit{
+    margin-top: 30px;
+    &-bt{
+      @include transition(all .3s ease-out);
+      padding:10px 40px;
+      font-size: 16px;
+      background-color: transparent;
+      color: var(--themeColor);
+      border-radius:5px;
+      border:3px solid var(--themeColor);
+      cursor:pointer;
+      &:hover{
+        color:#ffffff;
+        background-color: var(--themeColor);
+      }
+    }
+  }
+}
+
 .footer{
   position:fixed;
   bottom:0;
@@ -365,7 +436,7 @@ body{
     &:focus{
       @extend input;
       outline:none;
-      border-bottom-color: lightblue;
+      border-bottom-color: var(--themeColor);
     }
   }
 }
@@ -423,5 +494,5 @@ body{
   @include transition(none !important)
 }
 .color-lb{
-  color:lightblue;
+  color:var(--themeColor);
 }
