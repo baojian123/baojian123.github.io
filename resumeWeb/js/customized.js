@@ -13,9 +13,20 @@ function contentBinding(id){
   }
 }
 
+function attributeBinding(obj,attr){
+  obj[attr] = this.value
+  return function(e){
+    obj[attr] = this.value
+    console.log(obj[attr])
+  }
+}
 function bindMVVM(){
   var bgColor = document.querySelector("#bg-color");
   bgColor.oninput = styleBinding.bind(bgColor)("#background","backgroundColor")
   // var name = document.querySelector("#name");
   // name.oninput = contentBinding.bind(name)("#home")
+  var a = {
+    "a":2
+  }
+
 }

@@ -12,6 +12,22 @@ const navigationList = [{
   title:"About",
 }]
 
+function initMap() {
+  // The location of Uluru
+
+  const myAddress = { id:"306",lat: -33.800384, lng: 151.176985 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: myAddress,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: myAddress,
+    map: map,
+  });
+}
+
 function NavItem(navObj){
   let navigationItem = document.createElement("li");
   navigationItem.classList.add("navigation__item");
@@ -88,6 +104,7 @@ function initRoute(){
     }
   }
   routeSwitch()
+  initMap()
   bindMVVM()
 }
 

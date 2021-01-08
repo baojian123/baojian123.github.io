@@ -30,7 +30,7 @@ const ResumePage = (props) => {
         <div id="info__name">
           <h1>Zhian Chen</h1>
         </div>
-        <div id="info__position"><h2>FrontEnd-Developer</h2></div>
+        <div id="info__position"><p>FrontEnd-Developer</p></div>
         <div id="info__socials">
           <a href="https://www.linkedin.com/in/ian-chen-904567183/">
             <div class="icon icon--linkin" title="Linkin Account: Ian Chen"></div>

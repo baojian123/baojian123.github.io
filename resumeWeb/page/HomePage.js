@@ -11,5 +11,5 @@ const HomePage = (props) => {
 }
 var pageLoader = document.querySelector("#page-loader")
 pageLoader.appendChild(<HomePage pageId="home"/>);
-var input = document.querySelector("#name")
-input.oninput= contentBinding.bind(input)(".name")
+// var input = document.querySelector("#name")
+// input.oninput= contentBinding.bind(input)(".name")
