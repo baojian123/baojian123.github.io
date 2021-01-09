@@ -7,6 +7,8 @@ $dropDownRadius:25px;
 $headerTopColor: rgba(255,255,255,1);
 $headerColor: rgba(255,255,255,.6);
 $footerColor: rgba(255,255,255,1);
+$mediumSize: 768px;
+$largeSize: 1050px;
 @mixin transition($statement){
   -webkit-transition: $statement;
   -moz-transition: $statement;
@@ -20,6 +22,22 @@ $footerColor: rgba(255,255,255,1);
   -ms-mask: $statement;
   -o-mask: $statement;
   mask: $statement;
+}
+@mixin mediaQuery($deviceType){
+  @if $deviceType == smallScreen{
+    // size < 768px
+    @media only screen and (max-width: $mediumSize){
+      @content;
+    }
+  }@else if $deviceType == mediumScreen{
+    //768px < size < 1050px
+    @media only screen and (max-width:$largeSize){
+      @content;
+    }
+  }@else if $deviceType == largeScreen{
+    //size > 1050px
+    @content;
+  }
 }
 @keyframes shake{
   0%{
@@ -38,17 +56,20 @@ $footerColor: rgba(255,255,255,1);
     transform: rotate(0deg);
   }
 }
-body{
-  font-family: 'Roboto', Helvetica, sans-serif;
-}
+
 :root{
   // --themeColor:lightblue;
   --themeColor: #7861da;
+  --errorColor:red;
 }
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
     background: transparent;
+}
+body{
+  font-family: 'Roboto', Helvetica, sans-serif;
+  margin:0;
 }
 #background{
   position: fixed;
@@ -126,17 +147,16 @@ body{
 .content{
   display:flex;
   justify-content: center;
-  position:absolute;
-  top: $navHeight - $navHeight;
   width:100%;
   height:100%;
 }
 #page-loader{
   min-height:500px;
-  height:600px;
-  min-width:600px;
+  min-height:600px;
+  min-width:500px;
   max-width:1000px;
-  width:80%;
+  width:100%;
+  margin:50px 30px;
   margin-top:90px;
 }
 .page{
@@ -159,10 +179,14 @@ body{
   &__content{
     display:flex;
     margin:auto;
+    margin-bottom: 30px;
     width:90%;
     background-color: #ffffff;
     flex-direction:row;
     justify-content: center;
+    @include mediaQuery(smallScreen){
+      flex-direction:column;
+    }
   }
 }
 .current{
@@ -185,7 +209,17 @@ body{
 #resume{
   background: linear-gradient(180deg,var(--themeColor) 50%, white 50%);
   position: relative;
+  @include mediaQuery(smallScreen){
+    padding-bottom: 18px;
+    >div{
+      position: static;
+      margin:auto;
+      margin-top: 50px;
+    }
+  }
+
   &__info{
+    @include transition(all .5s ease-out);
     position: absolute;
     right:150px;
     top:100px;
@@ -194,10 +228,15 @@ body{
     flex-direction: column;
     text-align: center;
     color:#ffffff;
+    @include mediaQuery(mediumScreen){
+      right: 15%;
+      top: 70px;
+    }
   }
   &__intro{
-    height:200px;
+    min-height:200px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -206,34 +245,46 @@ body{
     left:50px;
     width:90%;
     line-height: 1.6;
+    @include mediaQuery(smallScreen){
+      flex-direction: column;
+    }
   }
   &__avatar{
     @include transition(all .4s);
     position:absolute;
     left:50px;
-    top:120px;
-    width:200px;
-    height:200px;
+    top:70px;
+    min-width:180px;
+    min-height:180px;
+    width:25%;
+    height:auto;
     border:5px solid #ffffff;
-    box-shadow:0px 5px 5px #e7e7e7;
+    box-shadow:0px 5px 5px rgba(0,0,0,.15);
     &:hover{
       transform: translate(0px,-13px);
-      box-shadow:0px 13px 7px 0px #aaaaaa;
+      box-shadow: 0px 18px 5px 0px rgba(0,0,0,.15);
     }
     >img{
-      width:200px;
-      height:200px;
+      width:100%;
+      height:100%;
+      vertical-align:bottom
     }
   }
 }
 
 #info{
   &__name>h1{
-    font-size:48px;
+    @include mediaQuery(mediumScreen){
+      font-size: 48px;
+    }
+    font-size:56px;
     line-height: 30px;
   }
   &__position>h2{
-    font-size: 18px;
+    @include mediaQuery(mediumScreen){
+      font-size: 18px;
+    }
+    font-size: 24px;
     line-height: 30px;
   }
   &__socials{
@@ -243,8 +294,12 @@ body{
     .icon{
       @include mask(none);
       @include transition(all .4s);
-      width:30px;
-      height:30px;
+      @include mediaQuery(mediumScreen){
+        width:30px;
+        height:30px;
+      }
+      width:35px;
+      height:35px;
       margin-left:10px;
       border-radius: 33%;
       background-color:#ffffff;
@@ -267,10 +322,10 @@ body{
 }
 #intro{
   &__description{
-    width:50%;
+    width:100%;
   }
   &__demographic{
-    width:50%;
+    width:100%;
     >li{
       list-style: none;
       margin-top:5px;
@@ -287,9 +342,10 @@ body{
 
 #contact{
   &__detail{
-    width:50%;
+    width:100%;
     padding: 0 20px;
     margin-top: 1em;
+    box-sizing:border-box;
     &>li{
       list-style:none;
       &.detail-info{
@@ -319,9 +375,10 @@ body{
     }
   }
   &__form{
-    width:50%;
+    width:100%;
     padding: 0 20px;
     margin-top: 1em;
+    box-sizing:border-box;
   }
 }
 #map{
@@ -388,11 +445,11 @@ body{
         width:100%;
       }
       &.error+.focus-underline{
-        background-color: red;
+        background-color: var(--errorColor);
         width:100%;
         &::after{
           content:"";
-          color:red;
+          color:var(--errorColor);
           position: absolute;
           bottom: -20px;
           font-size: 13px;
@@ -436,7 +493,7 @@ body{
     position: relative;
     >.g-recaptcha.error+.recaptcha-error::after{
       content: "Please pass the recaptcha first.";
-      color: red;
+      color: var(--errorColor);
       position: absolute;
       bottom: -20px;
     }

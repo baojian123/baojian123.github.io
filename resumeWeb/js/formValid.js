@@ -45,15 +45,21 @@ function verifyForm(e) {
     },100)
   }else{
     document.querySelector(".g-recaptcha").classList.remove("error");
-    if(!formName.oninput()){
-      alert("Name could not be empty, plz try again!")
-    }else if(!formEmail.oninput()){
-      alert("Email format error, plz enter a valid email!")
-    }else if(!formMsg.oninput()){
-      alert("Message could not be empty. Don't send junk mail. \nPlz try again!")
-    }else{
-      alert("Message Sent Successfully!")
-    }
+    setTimeout(function(){
+      let flag = 1
+      if(!formName.oninput()&&flag){
+        alert("Name could not be empty, plz try again!");
+        flag=0;
+      }if(!formEmail.oninput()&&flag){
+        alert("Email format error, plz enter a valid email!");
+        flag=0;
+      }if(!formMsg.oninput()&&flag){
+        alert("Message could not be empty. Don't send junk mail. \nPlz try again!");
+        flag=0;
+      }if(flag){
+        alert("Message Sent Successfully!")
+      }
+    },100)
   }
 }
 

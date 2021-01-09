@@ -26,6 +26,9 @@ const ResumePage = (props) => {
   },]
   return (
     <section id={props.pageId} class="page">
+      <div id="resume__avatar">
+        <img src="https://avatars3.githubusercontent.com/u/15513124?s=460&u=18f116600ffb8eacd4bcbbd8fb73c9f1a6c14ad3&v=4" alt=""/>
+      </div>
       <div id="resume__info">
         <div id="info__name">
           <h1>Zhian Chen</h1>
@@ -59,9 +62,7 @@ const ResumePage = (props) => {
           )}
         </ul>
       </div>
-      <div id="resume__avatar">
-        <img src="https://avatars3.githubusercontent.com/u/15513124?s=460&u=18f116600ffb8eacd4bcbbd8fb73c9f1a6c14ad3&v=4" alt=""/>
-      </div>
+
     </section>
   );
 }

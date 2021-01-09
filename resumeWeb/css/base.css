@@ -15,18 +15,20 @@
     transform: rotate(0deg);
   }
 }
-body {
-  font-family: "Roboto", Helvetica, sans-serif;
-}
-
 :root {
   --themeColor: #7861da;
+  --errorColor:red;
 }
 
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
   background: transparent;
+}
+
+body {
+  font-family: "Roboto", Helvetica, sans-serif;
+  margin: 0;
 }
 
 #background {
@@ -110,18 +112,17 @@ body {
 .content {
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 0px;
   width: 100%;
   height: 100%;
 }
 
 #page-loader {
   min-height: 500px;
-  height: 600px;
-  min-width: 600px;
+  min-height: 600px;
+  min-width: 500px;
   max-width: 1000px;
-  width: 80%;
+  width: 100%;
+  margin: 50px 30px;
   margin-top: 90px;
 }
 
@@ -146,10 +147,16 @@ body {
 .page__content {
   display: flex;
   margin: auto;
+  margin-bottom: 30px;
   width: 90%;
   background-color: #ffffff;
   flex-direction: row;
   justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .page__content {
+    flex-direction: column;
+  }
 }
 
 .current {
@@ -173,7 +180,22 @@ body {
   background: linear-gradient(180deg, var(--themeColor) 50%, white 50%);
   position: relative;
 }
+@media only screen and (max-width: 768px) {
+  #resume {
+    padding-bottom: 18px;
+  }
+  #resume > div {
+    position: static;
+    margin: auto;
+    margin-top: 50px;
+  }
+}
 #resume__info {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   position: absolute;
   right: 150px;
   top: 100px;
@@ -183,9 +205,16 @@ body {
   text-align: center;
   color: #ffffff;
 }
+@media only screen and (max-width: 1050px) {
+  #resume__info {
+    right: 15%;
+    top: 70px;
+  }
+}
 #resume__intro {
-  height: 200px;
+  min-height: 200px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #fff;
@@ -195,6 +224,11 @@ body {
   width: 90%;
   line-height: 1.6;
 }
+@media only screen and (max-width: 768px) {
+  #resume__intro {
+    flex-direction: column;
+  }
+}
 #resume__avatar {
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -203,28 +237,41 @@ body {
   transition: all 0.4s;
   position: absolute;
   left: 50px;
-  top: 120px;
-  width: 200px;
-  height: 200px;
+  top: 70px;
+  min-width: 180px;
+  min-height: 180px;
+  width: 25%;
+  height: auto;
   border: 5px solid #ffffff;
-  box-shadow: 0px 5px 5px #e7e7e7;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
 }
 #resume__avatar:hover {
   transform: translate(0px, -13px);
-  box-shadow: 0px 13px 7px 0px #aaaaaa;
+  box-shadow: 0px 18px 5px 0px rgba(0, 0, 0, 0.15);
 }
 #resume__avatar > img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
 }
 
 #info__name > h1 {
-  font-size: 48px;
+  font-size: 56px;
   line-height: 30px;
 }
+@media only screen and (max-width: 1050px) {
+  #info__name > h1 {
+    font-size: 48px;
+  }
+}
 #info__position > h2 {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 30px;
+}
+@media only screen and (max-width: 1050px) {
+  #info__position > h2 {
+    font-size: 18px;
+  }
 }
 #info__socials {
   display: flex;
@@ -242,12 +289,18 @@ body {
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin-left: 10px;
   border-radius: 33%;
   background-color: #ffffff;
   cursor: pointer;
+}
+@media only screen and (max-width: 1050px) {
+  #info__socials .icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 #info__socials .icon:hover {
   animation: 0.5s shake;
@@ -276,10 +329,10 @@ body {
 }
 
 #intro__description {
-  width: 50%;
+  width: 100%;
 }
 #intro__demographic {
-  width: 50%;
+  width: 100%;
 }
 #intro__demographic > li {
   list-style: none;
@@ -294,9 +347,10 @@ body {
 }
 
 #contact__detail {
-  width: 50%;
+  width: 100%;
   padding: 0 20px;
   margin-top: 1em;
+  box-sizing: border-box;
 }
 #contact__detail > li {
   list-style: none;
@@ -326,9 +380,10 @@ body {
   color: #888888;
 }
 #contact__form {
-  width: 50%;
+  width: 100%;
   padding: 0 20px;
   margin-top: 1em;
+  box-sizing: border-box;
 }
 
 #map {
@@ -405,12 +460,12 @@ body {
   width: 100%;
 }
 #form__content > input.error + .focus-underline, #form__content--message > input.error + .focus-underline, #form__content--email > input.error + .focus-underline, #form__content--name > input.error + .focus-underline, #form__content > textarea.error + .focus-underline, #form__content--message > textarea.error + .focus-underline, #form__content--email > textarea.error + .focus-underline, #form__content--name > textarea.error + .focus-underline {
-  background-color: red;
+  background-color: var(--errorColor);
   width: 100%;
 }
 #form__content > input.error + .focus-underline::after, #form__content--message > input.error + .focus-underline::after, #form__content--email > input.error + .focus-underline::after, #form__content--name > input.error + .focus-underline::after, #form__content > textarea.error + .focus-underline::after, #form__content--message > textarea.error + .focus-underline::after, #form__content--email > textarea.error + .focus-underline::after, #form__content--name > textarea.error + .focus-underline::after {
   content: "";
-  color: red;
+  color: var(--errorColor);
   position: absolute;
   bottom: -20px;
   font-size: 13px;
@@ -455,7 +510,7 @@ body {
 }
 #form__captcha > .g-recaptcha.error + .recaptcha-error::after {
   content: "Please pass the recaptcha first.";
-  color: red;
+  color: var(--errorColor);
   position: absolute;
   bottom: -20px;
 }
