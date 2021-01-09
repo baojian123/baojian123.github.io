@@ -35,5 +35,6 @@ function bindMVVM(){
   themeColor.value = "#7861da";
   // themeColor.value = "#add8e6";
   themeColor.oninput = propertyBinding.bind(themeColor)(":root","--themeColor");
-
+  var avatar = document.querySelector("#avatar-upload")
+  avatar.onchange = function(event){document.querySelector("#resume__avatar>img").src = URL.createObjectURL(event.target.files[0]);}
 }

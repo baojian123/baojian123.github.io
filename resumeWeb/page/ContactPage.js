@@ -1,12 +1,6 @@
 /** @jsx createElement */
 
 
-const verifyForm = () =>{
-  var recaptchaRes = grecaptcha.getResponse()
-  if(!recaptchaRes){
-    //google recaptcha verification failed, return a error
-  }
-}
 
 const ContactPage = (props) => {
   var reCaptchaKey = "6LfYLSUaAAAAAIcE2k4FHftAsByqFjyfcTcGtj-O";
@@ -36,18 +30,23 @@ const ContactPage = (props) => {
         </ul>
         <div id="contact__form">
           <h3 id="detail__header">Send <span class="color-lb">me</span> an email</h3>
-          <form action="#" method="post">
+          <form action="#" method="post" autocomplete="off">
             <div id="form__content--name">
-              <input type="text" placeholder="Your Name"/>
+              <input type="text" placeholder="Your Name" autocomplete="off"/>
+              <span class="focus-underline"></span>
             </div>
             <div id="form__content--email">
               <input type="text" placeholder="Your Email"/>
+              <span class="focus-underline"></span>
+
             </div>
             <div id="form__content--message">
               <textarea class="msg__content" type="text" placeholder="What do you want to tell me"/>
+              <span class="focus-underline"></span>
             </div>
             <div id="form__captcha">
               <div class="g-recaptcha" data-sitekey={reCaptchaKey}></div>
+              <span class="recaptcha-error"></span>
             </div>
             <div id="form__submit"><input id="form__submit-bt" type="submit" value="Send"/></div>
           </form>

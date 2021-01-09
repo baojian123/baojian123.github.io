@@ -13,8 +13,7 @@ const navigationList = [{
 }]
 
 function initMap() {
-  // The location of Uluru
-
+  // The location of my address
   const myAddress = { id:"306",lat: -33.800384, lng: 151.176985 };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {

@@ -359,13 +359,14 @@ body{
     display:flex;
     flex-direction: row;
     margin-top: 30px;
+    position: relative;
     &::before{
       content:"";
       width:30px;
       height:30px;
       background-color: var(--themeColor);
     }
-    &>input, &>textarea{
+    >input, &>textarea{
       font-family: "Roboto", Helvetica, sans-serif;
       outline:none;
       width:100%;
@@ -374,6 +375,29 @@ body{
       margin-left:5px;
       border:1px solid transparent;
       border-bottom-color: #777777;
+      &+.focus-underline{
+        @include transition(all .3s ease-out);
+        content:"";
+        position: absolute;
+        bottom:0;
+        width:0%;
+        height:2px;
+        background-color:var(--themeColor);
+      }
+      &:focus+.focus-underline, &.finished+.focus-underline{
+        width:100%;
+      }
+      &.error+.focus-underline{
+        background-color: red;
+        width:100%;
+        &::after{
+          content:"";
+          color:red;
+          position: absolute;
+          bottom: -20px;
+          font-size: 13px;
+        }
+      }
     }
     &>textarea{
       height:80px;
@@ -384,11 +408,17 @@ body{
       &::before{
         @include mask(url(../asset/person-24px.svg) no-repeat center/contain)
       }
+      >input.error+.focus-underline::after{
+        content:"Name should not be empty";
+      }
     }
     &--email{
       @extend #form__content;
       &::before{
         @include mask(url(../asset/email-24px.svg) no-repeat center/contain)
+      }
+      >input.error+.focus-underline::after{
+        content:"Please enter a valid email";
       }
     }
     &--message{
@@ -396,10 +426,20 @@ body{
       &::before{
         @include mask(url(../asset/msg-24px.svg) no-repeat center/contain)
       }
+      >textarea.error+.focus-underline::after{
+        content:"Message should not be empty"
+      }
     }
   }
   &__captcha{
     margin-top: 30px;
+    position: relative;
+    >.g-recaptcha.error+.recaptcha-error::after{
+      content: "Please pass the recaptcha first.";
+      color: red;
+      position: absolute;
+      bottom: -20px;
+    }
   }
   &__submit{
     margin-top: 30px;

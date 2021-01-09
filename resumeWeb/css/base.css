@@ -370,6 +370,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
+  position: relative;
 }
 #form__content::before, #form__content--message::before, #form__content--email::before, #form__content--name::before {
   content: "";
@@ -387,6 +388,33 @@ body {
   border: 1px solid transparent;
   border-bottom-color: #777777;
 }
+#form__content > input + .focus-underline, #form__content--message > input + .focus-underline, #form__content--email > input + .focus-underline, #form__content--name > input + .focus-underline, #form__content > textarea + .focus-underline, #form__content--message > textarea + .focus-underline, #form__content--email > textarea + .focus-underline, #form__content--name > textarea + .focus-underline {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--themeColor);
+}
+#form__content > input:focus + .focus-underline, #form__content--message > input:focus + .focus-underline, #form__content--email > input:focus + .focus-underline, #form__content--name > input:focus + .focus-underline, #form__content > input.finished + .focus-underline, #form__content--message > input.finished + .focus-underline, #form__content--email > input.finished + .focus-underline, #form__content--name > input.finished + .focus-underline, #form__content > textarea:focus + .focus-underline, #form__content--message > textarea:focus + .focus-underline, #form__content--email > textarea:focus + .focus-underline, #form__content--name > textarea:focus + .focus-underline, #form__content > textarea.finished + .focus-underline, #form__content--message > textarea.finished + .focus-underline, #form__content--email > textarea.finished + .focus-underline, #form__content--name > textarea.finished + .focus-underline {
+  width: 100%;
+}
+#form__content > input.error + .focus-underline, #form__content--message > input.error + .focus-underline, #form__content--email > input.error + .focus-underline, #form__content--name > input.error + .focus-underline, #form__content > textarea.error + .focus-underline, #form__content--message > textarea.error + .focus-underline, #form__content--email > textarea.error + .focus-underline, #form__content--name > textarea.error + .focus-underline {
+  background-color: red;
+  width: 100%;
+}
+#form__content > input.error + .focus-underline::after, #form__content--message > input.error + .focus-underline::after, #form__content--email > input.error + .focus-underline::after, #form__content--name > input.error + .focus-underline::after, #form__content > textarea.error + .focus-underline::after, #form__content--message > textarea.error + .focus-underline::after, #form__content--email > textarea.error + .focus-underline::after, #form__content--name > textarea.error + .focus-underline::after {
+  content: "";
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  font-size: 13px;
+}
 #form__content > textarea, #form__content--message > textarea, #form__content--email > textarea, #form__content--name > textarea {
   height: 80px;
   resize: none;
@@ -398,12 +426,18 @@ body {
   -o-mask: url(../asset/person-24px.svg) no-repeat center/contain;
   mask: url(../asset/person-24px.svg) no-repeat center/contain;
 }
+#form__content--name > input.error + .focus-underline::after {
+  content: "Name should not be empty";
+}
 #form__content--email::before {
   -webkit-mask: url(../asset/email-24px.svg) no-repeat center/contain;
   -moz-mask: url(../asset/email-24px.svg) no-repeat center/contain;
   -ms-mask: url(../asset/email-24px.svg) no-repeat center/contain;
   -o-mask: url(../asset/email-24px.svg) no-repeat center/contain;
   mask: url(../asset/email-24px.svg) no-repeat center/contain;
+}
+#form__content--email > input.error + .focus-underline::after {
+  content: "Please enter a valid email";
 }
 #form__content--message::before {
   -webkit-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
@@ -412,8 +446,18 @@ body {
   -o-mask: url(../asset/msg-24px.svg) no-repeat center/contain;
   mask: url(../asset/msg-24px.svg) no-repeat center/contain;
 }
+#form__content--message > textarea.error + .focus-underline::after {
+  content: "Message should not be empty";
+}
 #form__captcha {
   margin-top: 30px;
+  position: relative;
+}
+#form__captcha > .g-recaptcha.error + .recaptcha-error::after {
+  content: "Please pass the recaptcha first.";
+  color: red;
+  position: absolute;
+  bottom: -20px;
 }
 #form__submit {
   margin-top: 30px;

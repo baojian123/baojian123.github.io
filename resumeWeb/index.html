@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="shortcut icon" href="asset/logo.png">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUwhNrgtJFCgJ-ocT7dUdY9oCC38D0_DA&callback=initMap&libraries=&v=weekly" defer></script>
-  <script src="https://www.google.com/recaptcha/api.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <div id="background"></div>
@@ -27,7 +27,9 @@
       value="#e7e7e7" >
       <label for="">Name:</label><input type="text" id="user-name" name="name"
       value="Zhian Chen" >
-      <label for="">themeColor</label><input type="color" id="theme-color" name="color"
+      <label for="">themeColor:</label><input type="color" id="theme-color" name="color"
+      value="#ADD8E6" >
+      <label for="">avatar:</label><input type="file" accept="image/*" id="avatar-upload" name="image"
       value="#ADD8E6" >
     </div>
     <div class="collapse" onclick="footerShow()"></div>
@@ -41,5 +43,7 @@
   <script type="text/babel" src="page/ContactPage.js" charset="utf-8"></script>
   <script type="text/babel" src="page/AboutPage.js" charset="utf-8"></script>
   <script type="text/babel" src="js/index.js" charset="utf-8"></script>
+  <script type="text/babel" src="js/formValid.js" charset="utf-8"></script>
+
 </body>
 </html>
