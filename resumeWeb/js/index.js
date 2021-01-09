@@ -11,7 +11,18 @@ const navigationList = [{
   id:"about",
   title:"About",
 }]
-
+var navShowed = 0
+function showNavigation(){
+  let sideNav = document.querySelector(".navigation__list");
+  if(navShowed){
+    sideNav.classList.remove("show");
+  }else{
+    sideNav.classList.add("show");
+  }
+  navShowed^=1;
+}
+var option = document.querySelector(".navigation__option");
+option.onclick = showNavigation;
 function initMap() {
   // The location of my address
   const myAddress = { id:"306",lat: -33.800384, lng: 151.176985 };
