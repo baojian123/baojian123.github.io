@@ -1,15 +1,15 @@
 const navigationList = [{
-  id:"home",
-  title:"Home"
-},{
   id:"resume",
   title:"Resume",
+},{
+  id:"about",
+  title:"About"
 },{
   id:"contact",
   title:"Contact",
 },{
-  id:"about",
-  title:"About",
+  id:"blog",
+  title:"Blog",
 }]
 var navShowed = 0
 function showNavigation(){
@@ -21,6 +21,7 @@ function showNavigation(){
   }
   navShowed^=1;
 }
+
 var option = document.querySelector(".navigation__option");
 option.onclick = showNavigation;
 function initMap() {

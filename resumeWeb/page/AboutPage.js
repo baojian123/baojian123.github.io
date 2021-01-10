@@ -7,17 +7,17 @@ const AboutPage = (props) => {
         <h2>About</h2>
       </div>
       <div class="page__content">
-        <div class="info-temp">
-          <h3>Coming Soon</h3>
-          <div class="ellipsis">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
+        <div id="about__experience">
+
+        </div>
+        <div id="about__skills">
+
         </div>
       </div>
     </section>
-  )
+  );
 }
 var pageLoader = document.querySelector("#page-loader")
 pageLoader.appendChild(<AboutPage pageId="about"/>);
+// var input = document.querySelector("#name")
+// input.oninput= contentBinding.bind(input)(".name")
