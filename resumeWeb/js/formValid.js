@@ -59,12 +59,11 @@ function verifyForm(e) {
       }if(flag){
         var url = "https://vxyxrena6l.execute-api.us-east-1.amazonaws.com/default/sesMailServer?from="+formEmail.value+"&name="+formName.value+"&msg="+formMsg.value;
         var req = new XMLHttpRequest();
-        req.addEventListener("load",function(){
-          alert(this.responseText)
-        })
+        req.onload = function(){
+          alert("Message Sent Successfully!")
+        }
         req.open("GET",url);
         req.send()
-        // alert("Message Sent Successfully!")
       }
     },100)
   }
