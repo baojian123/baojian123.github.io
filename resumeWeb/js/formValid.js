@@ -57,7 +57,14 @@ function verifyForm(e) {
         alert("Message could not be empty. Don't send junk mail. \nPlz try again!");
         flag=0;
       }if(flag){
-        alert("Message Sent Successfully!")
+        var url = "https://vxyxrena6l.execute-api.us-east-1.amazonaws.com/default/sesMailServer?from="+formEmail.value+"&name="+formName.value+"&msg="+formMsg.value;
+        var req = new XMLHttpRequest();
+        req.addEventListener("load",function(){
+          alert(this.responseText)
+        })
+        req.open("GET",url);
+        req.send()
+        // alert("Message Sent Successfully!")
       }
     },100)
   }
