@@ -543,6 +543,7 @@ body{
     margin-top: 20px;
   }
   &__level{
+
     width:auto;
     height:10px;
     border-radius: 5px;
@@ -550,11 +551,14 @@ body{
     background-color:#e7e7e7;
   }
   @for $i from 1 through 5{
-    &__level-#{$i}{
-      width:$i*20%;
-      height:100%;
-      background-color: var(--themeColor);
-      // background: linear-gradient(90deg,var(--themeColor) $i*20%, transparent 0,transparent (5 - $i)*20%)
+    &__level{
+      .skill__level-#{$i}{
+        width:$i*20%;
+        height:100%;
+        border-radius: 5px;
+        background-color: var(--themeColor);
+        // background: linear-gradient(90deg,var(--themeColor) $i*20%, transparent 0,transparent (5 - $i)*20%)
+      }
     }
   }
 }
@@ -749,6 +753,9 @@ body{
   .info-temp{
     font-size:42px;
     color: var(--themeColor);
+    >h3{
+      margin:10px 0px;
+    }
     .ellipsis{
       display: flex;
       flex-direction: row;
