@@ -454,11 +454,110 @@ body{
 }
 
 #about{
-  &__experience{
-    
+
+  &__education, &__skills{
+    width:100%;
   }
 }
 
+#education{
+  &__timeline{
+    width:auto;
+    border:0px solid rgba(0,0,0,.2);
+    border-left:2px solid rgba(0,0,0,.2);
+    padding-left: 27px;
+    padding-top: 1px;
+    margin-right:20px;
+    @include mediaQuery(smallScreen){
+      margin:0;
+    }
+  }
+}
+
+.timeline{
+  &__card{
+    @include transition(all .3s);
+    border:2px solid rgba(0,0,0,.1);
+    border-left: 4px solid var(--themeColor);
+    padding:10px 20px;
+    margin-top:20px;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    &::before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 19px;
+      left: -40px;
+      background-color: #ffffff;
+      border: 3px solid var(--themeColor);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    &.active::before{
+      background-color: var(--themeColor);
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      top: 26px;
+      left: -31px;
+      width: 30px;
+      height: 2px;
+      background-color: var(--themeColor);
+    }
+    &:hover{
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__header{
+    h4{
+      margin:10px 0px;
+    }
+  }
+  &__info{
+    font-size: 12px;
+    a, a:focus, a:visited{
+      text-decoration: none;
+      color: var(--themeColor);
+    }
+  }
+  &__time{
+  }
+  &__location{
+    margin-left:20px;
+    padding-left:20px;
+    border:0px solid transparent;
+    border-left:1px solid rgba(0,0,0,.1);
+  }
+  &__content{
+    p{
+      font-size: 15px;
+      margin:8px 0px;
+    }
+  }
+}
+.skill{
+  &__item{
+    margin-top: 20px;
+  }
+  &__level{
+    width:auto;
+    height:10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color:#e7e7e7;
+  }
+  @for $i from 1 through 5{
+    &__level-#{$i}{
+      width:$i*20%;
+      height:100%;
+      background-color: var(--themeColor);
+      // background: linear-gradient(90deg,var(--themeColor) $i*20%, transparent 0,transparent (5 - $i)*20%)
+    }
+  }
+}
 #contact{
   &__detail{
     width:100%;
@@ -553,7 +652,6 @@ body{
       border-bottom-color: #777777;
       &+.focus-underline{
         @include transition(all .3s ease-out);
-        content:"";
         position: absolute;
         bottom:0;
         width:0%;

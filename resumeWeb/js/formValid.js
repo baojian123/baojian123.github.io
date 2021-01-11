@@ -3,9 +3,11 @@ formName.oninput = formName.onblur = function(event) {
   let content = this.value;
   if(!content){
     this.classList.add("error");
+    this.classList.remove("finished");
     return false;
   }else{
     this.classList.remove("error");
+    this.classList.add("finished");
     return true;
   }
 }
@@ -15,9 +17,11 @@ formEmail.oninput = formEmail.onblur = function(event) {
   let reg = /([\w0-9.-])+@[\w.]+\.([a-zA-z]{2,5})/gi;
   if(!content.match(reg)){
     this.classList.add("error");
+    this.classList.remove("finished");
     return false;
   }else{
     this.classList.remove("error");
+    this.classList.add("finished");
     return true;
   }
 }
@@ -26,9 +30,11 @@ formMsg.oninput = formMsg.onblur = function(event) {
   let content = this.value;
   if(!content){
     this.classList.add("error");
+    this.classList.remove("finished");
     return false;
   }else{
     this.classList.remove("error");
+    this.classList.add("finished");
     return true;
   }
 }

@@ -38,7 +38,6 @@ const ContactPage = (props) => {
             <div id="form__content--email">
               <input type="text" placeholder="Your Email"/>
               <span class="focus-underline"></span>
-
             </div>
             <div id="form__content--message">
               <textarea class="msg__content" type="text" placeholder="What do you want to tell me"/>
