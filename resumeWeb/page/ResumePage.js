@@ -4,17 +4,17 @@
 //and change the bgcolor of that div
 const ResumePage = (props) => {
   var demographicInfo = [{
-    "id": "demographic__age",
-    "key":"Age",
-    "value":"25"
+    "id": "demographic__leetcode",
+    "key":"LeetCode",
+    "value":"https://leetcode.com/Ian-Chen/"
   },{
-    "id": "demographic__residence",
-    "key":"Residence",
-    "value":"China"
-  },{
+  //   "id": "demographic__residence",
+  //   "key":"Residence",
+  //   "value":"China"
+  // },{
     "id": "demographic__address",
     "key":"Address",
-    "value":"306/18 Freeman Road, Chatswood, Sydney"
+    "value":"Chatswood, Sydney"
   },{
     "id": "demographic__email",
     "key":"Email",
