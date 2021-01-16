@@ -2,7 +2,6 @@
 
 const SkillItem = (props) =>{
   return (
-
     <div class="skill__item" title={props.skill.name} style={"-webkit-mask: url("+props.skill.url+")"}>
     </div>
   )
@@ -51,46 +50,46 @@ const AboutPage = (props) => {
   var skillList = [
     {
       name:"HTML5",
-      url: "../asset/skills/html5.svg"
+      url: "asset/skills/html5.svg"
     },{
       name:"CSS3",
-      url: "../asset/skills/css3.svg"
+      url: "asset/skills/css3.svg"
     },{
       name:"SASS",
-      url: "../asset/skills/sass.svg"
+      url: "asset/skills/sass.svg"
     },{
       name:"JavaScript",
-      url: "../asset/skills/javascript.svg"
+      url: "asset/skills/javascript.svg"
     },{
       name:"Node.js",
-      url: "../asset/skills/node-dot-js.svg"
+      url: "asset/skills/node-dot-js.svg"
     },{
       name:"React",
-      url: "../asset/skills/react.svg"
+      url: "asset/skills/react.svg"
     },{
       name:"Vue.js",
-      url: "../asset/skills/vue-dot-js.svg"
+      url: "asset/skills/vue-dot-js.svg"
     },{
       name:"D3.js",
-      url: "../asset/skills/d3-dot-js.svg"
+      url: "asset/skills/d3-dot-js.svg"
     },{
       name:"MongoDB",
-      url: "../asset/skills/mongodb.svg"
+      url: "asset/skills/mongodb.svg"
     },{
       name:"MySQL",
-      url: "../asset/skills/mysql.svg"
+      url: "asset/skills/mysql.svg"
     },{
       name:"Google Cloud",
-      url: "../asset/skills/googlecloud.svg"
+      url: "asset/skills/googlecloud.svg"
     },{
       name:"Amazon AWS",
-      url: "../asset/skills/amazonaws.svg"
+      url: "asset/skills/amazonaws.svg"
     },{
       name:"Python",
-      url: "../asset/skills/python.svg"
+      url: "asset/skills/python.svg"
     },{
       name:"Tensorflow",
-      url: "../asset/skills/tensorflow.svg"
+      url: "asset/skills/tensorflow.svg"
     },]
   return (
     <section id={props.pageId} class="page">
