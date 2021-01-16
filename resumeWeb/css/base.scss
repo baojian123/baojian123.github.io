@@ -421,7 +421,7 @@ body{
         @include mask(url(../asset/linkin-icon.svg) no-repeat center/ contain);
       }
       &--instagram{
-        @include mask(url(../asset/instagram-icon.png) no-repeat center/ contain);
+        @include mask(url(../asset/instagram-icon.svg) no-repeat center/ contain);
       }
     }
   }
@@ -441,7 +441,7 @@ body{
         width:100px;
       }
       .value{
-        color:#bbbbbb;
+        color:#777777;
       }
     }
     @include mediaQuery(smallScreen){
@@ -454,7 +454,6 @@ body{
 }
 
 #about{
-
   &__education, &__skills{
     width:100%;
   }
@@ -539,8 +538,25 @@ body{
   }
 }
 .skill{
+  &__content{
+    width:100%;
+    background-color: rgba(0,0,0,.05);
+    border-radius: 10px;
+    padding:10px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
   &__item{
-    margin-top: 20px;
+    margin: 10px;
+    width:40px;
+    height:40px;
+    background-color: var(--themeColor);
+    @include mediaQuery(mediumScreen){
+      width:30px;
+      height: 30px;
+    }
   }
   &__level{
 

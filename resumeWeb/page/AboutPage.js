@@ -2,12 +2,8 @@
 
 const SkillItem = (props) =>{
   return (
-    <div class="skill__item">
-      <span>{props.skill.name}</span>
-      <div class="skill__level">
-        <div class={"skill__level-"+props.skill.level}>
-        </div>
-      </div>
+
+    <div class="skill__item" title={props.skill.name} style={"-webkit-mask: url("+props.skill.url+")"}>
     </div>
   )
 }
@@ -52,29 +48,50 @@ const AboutPage = (props) => {
       locLink:"https://www.uts.edu.au/",
       content:"Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.",
   }]
-  var skillLevel = [
+  var skillList = [
     {
       name:"HTML5",
-      level: 4
+      url: "../asset/skills/html5.svg"
     },{
-      name:"CSS3/SASS",
-      level: 4
+      name:"CSS3",
+      url: "../asset/skills/css3.svg"
+    },{
+      name:"SASS",
+      url: "../asset/skills/sass.svg"
     },{
       name:"JavaScript",
-      level: 4
-    },{
-      name:"React",
-      level: 2
-    },{
-      name:"Vue",
-      level: 3
+      url: "../asset/skills/javascript.svg"
     },{
       name:"Node.js",
-      level: 3
+      url: "../asset/skills/node-dot-js.svg"
+    },{
+      name:"React",
+      url: "../asset/skills/react.svg"
+    },{
+      name:"Vue.js",
+      url: "../asset/skills/vue-dot-js.svg"
+    },{
+      name:"D3.js",
+      url: "../asset/skills/d3-dot-js.svg"
+    },{
+      name:"MongoDB",
+      url: "../asset/skills/mongodb.svg"
+    },{
+      name:"MySQL",
+      url: "../asset/skills/mysql.svg"
+    },{
+      name:"Google Cloud",
+      url: "../asset/skills/googlecloud.svg"
+    },{
+      name:"Amazon AWS",
+      url: "../asset/skills/amazonaws.svg"
     },{
       name:"Python",
-      level: 4
-  },]
+      url: "../asset/skills/python.svg"
+    },{
+      name:"Tensorflow",
+      url: "../asset/skills/tensorflow.svg"
+    },]
   return (
     <section id={props.pageId} class="page">
       <div class="page__header">
@@ -92,9 +109,11 @@ const AboutPage = (props) => {
         </div>
         <div id="about__skills">
           <h3>Skills</h3>
-          {skillLevel.map((item) => (
-            <SkillItem skill={item} />
-          ))}
+          <div class="skill__content">
+            {skillList.map((item) => (
+              <SkillItem skill={item} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

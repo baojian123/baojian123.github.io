@@ -439,11 +439,11 @@ body {
   mask: url(../asset/linkin-icon.svg) no-repeat center/contain;
 }
 #info__socials .icon--instagram {
-  -webkit-mask: url(../asset/instagram-icon.png) no-repeat center/contain;
-  -moz-mask: url(../asset/instagram-icon.png) no-repeat center/contain;
-  -ms-mask: url(../asset/instagram-icon.png) no-repeat center/contain;
-  -o-mask: url(../asset/instagram-icon.png) no-repeat center/contain;
-  mask: url(../asset/instagram-icon.png) no-repeat center/contain;
+  -webkit-mask: url(../asset/instagram-icon.svg) no-repeat center/contain;
+  -moz-mask: url(../asset/instagram-icon.svg) no-repeat center/contain;
+  -ms-mask: url(../asset/instagram-icon.svg) no-repeat center/contain;
+  -o-mask: url(../asset/instagram-icon.svg) no-repeat center/contain;
+  mask: url(../asset/instagram-icon.svg) no-repeat center/contain;
 }
 
 #intro__description {
@@ -461,7 +461,7 @@ body {
   width: 100px;
 }
 #intro__demographic > li .value {
-  color: #bbbbbb;
+  color: #777777;
 }
 @media only screen and (max-width: 768px) {
   #intro__demographic {
@@ -551,8 +551,27 @@ body {
   margin: 8px 0px;
 }
 
+.skill__content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
 .skill__item {
-  margin-top: 20px;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--themeColor);
+}
+@media only screen and (max-width: 1050px) {
+  .skill__item {
+    width: 30px;
+    height: 30px;
+  }
 }
 .skill__level {
   width: auto;
