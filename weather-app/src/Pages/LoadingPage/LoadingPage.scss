@@ -1,0 +1,105 @@
+$skyLight: #55C1FF;
+$skyDark: #33658A;
+$sunLight: #FEC601;
+$sunDark: #EA7317;
+$sunDiameter: 75px;
+$cloudLight: #DBE4EE;
+$cloudDark: #A9BBCF;
+@keyframes animated-rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes animated-float{
+  0%{
+    transform: translate(0px,0px);
+  }
+  50%{
+    transform: translate(-20px,0px);
+  }
+  100%{
+    transform: translate(0px,0px);
+  }
+}
+.loading-page{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: linear-gradient($skyLight, $skyDark);
+  z-index: 1;
+  .loading-animation{
+    position: relative;
+    .animation__sun{
+      width: $sunDiameter;
+      height: $sunDiameter;
+      position: absolute;
+      right:10px;
+      border-radius: 50%;
+      background: linear-gradient($sunLight, $sunDark);
+      z-index: 3;
+    }
+    .animation__ray, .animation__ray::after{
+      content:'';
+      display:block;
+      width:$sunDiameter;
+      height:$sunDiameter;
+      position: absolute;
+      background-color: $sunLight;
+      z-index:-1;
+    }
+    .animation__ray{
+      right:10px;
+      animation: 10s animated-rotate infinite linear;
+    }
+    .animation__ray:after{
+      transform:rotate(45deg);
+    }
+    .animation__cloud{
+      position: relative;
+      left: -20px;
+      top: 20px;
+      width:75px;
+      height:75px;
+      border-radius: 50%;
+      background-color: $cloudLight;
+      animation: 6s animated-float infinite linear;
+      z-index: 7;
+      &::before{
+        content:'';
+        position:absolute;
+        top:40px;
+        left:-15px;
+        border-radius: 50px;
+        width:140px;
+        height:60px;
+        background:linear-gradient($cloudLight, $cloudDark);
+        z-index: 6;
+      }
+      &::after{
+        content:'';
+        position:absolute;
+        width: 50px;
+        height: 50px;
+        top: 17px;
+        left: 55px;
+        border-radius: 50%;
+        background-color: $cloudLight;
+        z-index:5;
+      }
+    }
+    .animation__title{
+      margin-top:50px;
+      font-size: 30px;
+      color: #ffffff;
+    }
+  }
+}
