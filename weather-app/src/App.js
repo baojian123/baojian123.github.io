@@ -1,9 +1,10 @@
 /* eslint linebreak-style: ['error', 'unix']*/
 
 import React, {useState, useEffect} from 'react';
-import './App.scss';
 import WeatherPage from './Pages/WeatherPage/WeatherPage';
 import LoadingPage from './Pages/LoadingPage/LoadingPage';
+import './App.scss';
+import './base.scss';
 /**
  * A functional component for the whole single page application
  * @return {object} A app component

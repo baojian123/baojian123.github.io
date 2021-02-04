@@ -1,0 +1,21 @@
+$mediumSize: 768px;
+$largeSize: 1110px;
+@mixin mediaQuery($deviceType){
+  @if $deviceType == smallScreen{
+    // size < 768px
+    @media only screen and (max-width: $mediumSize){
+      @content;
+    }
+  }@else if $deviceType == mediumScreen{
+    //768px < size < 1050px
+    @media only screen and (max-width:$largeSize){
+      @content;
+    }
+  }@else if $deviceType == largeScreen{
+    //size > 1050px
+    @content;
+  }
+}
+:root{
+  --themeColor: #437aff;
+}

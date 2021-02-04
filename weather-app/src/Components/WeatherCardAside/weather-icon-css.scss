@@ -1,4 +1,4 @@
-.header__icon{
+.aside__icon{
   /* SUNNY */
    >div[type=icon]{
      position:absolute;
@@ -74,7 +74,7 @@
   }
   .cloudy:after {
   	animation: cloudy_shadow 5s ease-in-out infinite;
-  	background: #000000;
+  	background: rgba(0,0,0,.7);
   	border-radius: 50%;
   	content: '';
   	height: 15px;
@@ -113,7 +113,7 @@
   }
   .rainy:after {
   	animation: rainy_shadow 5s ease-in-out infinite 1s;
-  	background: #000000;
+  	background: rgba(0,0,0,.7);
   	border-radius: 50%;
   	content: '';
   	height: 15px;
@@ -255,7 +255,7 @@
   }
   .rainbow:after {
   	animation: rainbow_shadow 5s ease-in-out infinite;
-  	background: #000000;
+  	background: rgba(0,0,0,.7);
   	border-radius: 50%;
   	content: '';
   	opacity: 0.2;
@@ -419,7 +419,7 @@
   }
   .snowy:after {
   	animation: snowy_shadow 5s ease-in-out infinite 1s;
-  	background: #000000;
+  	background: rgba(0,0,0,.7);
   	border-radius: 50%;
   	content: '';
   	height: 15px;

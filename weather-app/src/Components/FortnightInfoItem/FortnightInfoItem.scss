@@ -1,0 +1,30 @@
+@import '../../base.scss';
+.fortnight{
+  &__item{
+    position: relative;
+    padding: 4px;
+    margin: 5px;
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+    font-size: 16px;
+    @include mediaQuery(mediumScreen){
+      font-size: 12px;
+    }
+  }
+  &__icon{
+    >img{
+      max-width:60px;
+      max-height:60px;
+      @include mediaQuery(mediumScreen){
+        max-width:40px;
+        max-height:40px;
+      }
+    }
+  }
+  &__min-temp{
+    color: rgba(0,0,0,.5);
+  }
+  &__max-temp{
+    color: rgba(0,0,0,1);
+  }
+}

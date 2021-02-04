@@ -1,0 +1,15 @@
+.fortnight{
+  &-title{
+    margin-left: 20px;
+    text-align: left;
+    font-weight: 400;
+  }
+  &-list{
+    padding-left: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

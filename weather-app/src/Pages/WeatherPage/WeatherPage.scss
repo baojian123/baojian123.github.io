@@ -1,5 +1,9 @@
+$skyLight: #55C1FF;
+$skyDark: #33658A;
+
 .weather-page{
-  background-color: #ffffff;
+  background: $skyLight;
+  background-image: linear-gradient(315deg, $skyLight 0%, $skyDark, 74%);
   width:100%;
   height: 100%;
   display: flex;

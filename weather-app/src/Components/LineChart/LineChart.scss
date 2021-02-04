@@ -1,0 +1,25 @@
+.hour-info{
+  width: 100%;
+  max-width: 630px;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  >div{
+    margin: 10px;
+    max-height: 250px;
+    max-width: 600px;
+  }
+  div{
+    width:100%;
+  }
+  *, :after, :before{
+    box-sizing: border-box;
+  }
+}
+.hour__title{
+  margin-left: 20px;
+  text-align: left;
+  font-weight: 400;
+}
