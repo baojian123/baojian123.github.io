@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Cars>
+   <Car>
+     <Category>Sedan</Category>
+     <Availability>1</Availability>
+     <Brand>Toyota</Brand>
+     <Model>Camry</Model>
+     <ModelYear>2015</ModelYear>
+     <Mileage>10000</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>120</PricePerDay>
+     <Description>2015 Toyota Camry ASV50R Altise Sedan 4dr Spts Auto 6sp 2.5i (Apr)</Description>
+   </Car>
+   <Car>
+     <Category>SUV</Category>
+     <Availability>1</Availability>
+     <Brand>Nissan</Brand>
+     <Model>X-trail</Model>
+     <ModelYear>2014</ModelYear>
+     <Mileage>36782</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>200</PricePerDay>
+     <Description>2014 Nissan X-Trail. Finished in red with contrasting black cloth interior. Fantastic example of this popular 4WD SUV. Colour rear camera, tow bar, key less entry, push button start, Bluetooth connectivity, cruise control, auto headlights and more.......</Description>
+   </Car>
+   <Car>
+     <Category>Wagon</Category>
+     <Availability>0</Availability>
+     <Brand>Volkswagon</Brand>
+     <Model>Golf</Model>
+     <ModelYear>2018</ModelYear>
+     <Mileage>12412</Mileage>
+     <FuelType>CNG</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>180</PricePerDay>
+     <Description>WE WILL NOT BE BEATEN ON PRICE !! Includes R-LINE PACKAGE And The Drivers Assistance Package Plus panoramic sunroof! !! Great savings to be had with the best service. Call us now to be pampered and experience what you should with your new car purchase. Take advantage of the best prices in Perth while we show you what quality service is all about. Call Now to secure your next Volkswagen.</Description>
+   </Car>
+   <Car>
+     <Category>Sedan</Category>
+     <Availability>0</Availability>
+     <Brand>Honda</Brand>
+     <Model>Civic</Model>
+     <ModelYear>2018</ModelYear>
+     <Mileage>14524</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>199.9</PricePerDay>
+     <Description> this immaculate condition Honda Civic is sure to impress with its long list of features *  *FRONT AND REAR SENSORS * REVERSE CAMERA * 17 INCH ALLOY WHEELS * PRIVACY GLASS * FRONT FOG LIGHTS * DAY TIME RUNNING LIGHTS * LEATHER INTERIOR * HEATED SEATS * PUSH START IGNITION * ADAPTIVE CRUISE CONTROL * LAND DEPARTURE ASSIST * VOICE RECOGNITION * SATELLITE NAVIGATION * MOBILE PHONE CONNECTIVITY * POWER SUNROOF * Enquire with us now and experience our great customer service! Purchase your next vehicle from somewhere you can trust as part of Australia?8099s largest motoring group. Located 45 minutes South East of Melbourne we provide easy access to all surrounding suburbs and offer freight at excellent rates to our interstate customers. </Description>
+   </Car>
+   <Car>
+     <Category>Sedan</Category>
+     <Availability>1</Availability>
+     <Brand>BMW</Brand>
+     <Model>320i</Model>
+     <ModelYear>2008</ModelYear>
+     <Mileage>183600</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>298.5</PricePerDay>
+     <Description>2008 BMW 320i Executive Automatic Only 183,600 ks, still plenty of reliable motoring to be done in this car. This is the best first car or second family car for your household! This car is in very good condition, obviously very well looked after by the previous owner.
+</Description>
+   </Car>
+   <Car>
+     <Category>SUV</Category>
+     <Availability>1</Availability>
+     <Brand>Holden</Brand>
+     <Model>Captiva</Model>
+     <ModelYear>2016</ModelYear>
+     <Mileage>68879</Mileage>
+     <FuelType>Diesel</FuelType>
+     <Seats>7</Seats>
+     <PricePerDay>170</PricePerDay>
+     <Description>2016 Holden Captiva CG LTZ Wagon 7st 5dr Spts Auto 6sp AWD 3.0i [MY16]</Description>
+   </Car>
+   <Car>
+     <Category>SUV</Category>
+     <Availability>1</Availability>
+     <Brand>Jeep Grand</Brand>
+     <Model>Cherokee</Model>
+     <ModelYear>2012</ModelYear>
+     <Mileage>112964</Mileage>
+     <FuelType>Diesel</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>183</PricePerDay>
+     <Description>2012 Jeep Grand Cherokee WK MY2012 Laredo Bright Silver 5 Speed Sports Automatic Wagon.</Description>
+   </Car>
+   <Car>
+     <Category>SUV</Category>
+     <Availability>0</Availability>
+     <Brand>Mercedes-Benz</Brand>
+     <Model>GLC</Model>
+     <ModelYear>2016</ModelYear>
+     <Mileage>12412</Mileage>
+     <FuelType>Diesel</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>223.5</PricePerDay>
+     <Description>With factory optioned AMG Line, Seat Comfort Package, COMAND Package, Vision Package, Night Package and Metallic Paint this outstanding vehicle is price reduced to clear and presents as excellent opportunity. </Description>
+   </Car>
+   <Car>
+     <Category>SUV</Category>
+     <Availability>1</Availability>
+     <Brand>Suzuki</Brand>
+     <Model>Jimny</Model>
+     <ModelYear>2015</ModelYear>
+     <Mileage>123124</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>4</Seats>
+     <PricePerDay>365</PricePerDay>
+     <Description>We absolutely love our Jimny but we are moving overseas so, alas, we must let it go. It really is the vehicle for every situation; it flies over soft sand, mud and snow with ease but it is so easy to drive that it can still squeeze in to the smallest car parking spaces in the the city, see pics attached! The pictures in the park were taken today.</Description>
+   </Car>
+   <Car>
+     <Category>Sedan</Category>
+     <Availability>1</Availability>
+     <Brand>Hyundai</Brand>
+     <Model>Sonata</Model>
+     <ModelYear>2019</ModelYear>
+     <Mileage>12321</Mileage>
+     <FuelType>Petrol</FuelType>
+     <Seats>5</Seats>
+     <PricePerDay>201.4</PricePerDay>
+     <Description>DEMO 2019 SONATA with sat nav and push button start. EOFY DEMO CLEARANCE! LAST CHANCE TO GET THIS MODEL AT THIS PRICE!</Description>
+   </Car>
+ </Cars>
